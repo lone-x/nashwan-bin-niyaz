@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neshwan | Creative Developer & Designer</title>
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,400&display=swap"
+        rel="stylesheet">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Tailwind Configuration -->
     <script>
         tailwind.config = {
@@ -72,12 +75,12 @@
             flex-direction: column;
             will-change: transform, opacity;
             transform-style: preserve-3d;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
             transition: box-shadow 0.3s ease, border-color 0.3s ease;
         }
-        
+
         .bento-card:hover {
-            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
             border-color: #d8d2c4;
         }
 
@@ -88,7 +91,7 @@
             overflow: hidden;
             background-color: #E6E1D6;
         }
-        
+
         .img-wrapper img {
             width: 100%;
             height: 100%;
@@ -116,13 +119,16 @@
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
             background: #F4F0EA;
         }
+
         ::-webkit-scrollbar-thumb {
             background: #E6E1D6;
             border-radius: 4px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: #C85A3C;
         }
@@ -132,13 +138,16 @@
             display: none;
             opacity: 0;
         }
+
         .view-active {
             display: block;
-            opacity: 1; /* Handled cleanly by CSS now, eliminating GSAP blank bugs */
+            opacity: 1;
+            /* Handled cleanly by CSS now, eliminating GSAP blank bugs */
         }
 
         /* Form styling */
-        input, textarea {
+        input,
+        textarea {
             background: transparent;
             border: none;
             border-bottom: 1px solid #E6E1D6;
@@ -148,37 +157,59 @@
             width: 100%;
             transition: border-color 0.3s ease;
         }
-        input:focus, textarea:focus {
+
+        input:focus,
+        textarea:focus {
             outline: none;
             border-color: #C85A3C;
         }
-        
+
         /* Interactive Micro-animations */
         .pulse-dot {
             animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
+
         @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.4; transform: scale(1.5); }
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.4;
+                transform: scale(1.5);
+            }
         }
 
         .flow-line path {
             stroke-dasharray: 6;
             animation: dash 20s linear infinite;
         }
+
         @keyframes dash {
-            to { stroke-dashoffset: -100; }
+            to {
+                stroke-dashoffset: -100;
+            }
         }
-        
+
         .spin-slow {
             animation: spin 12s linear infinite;
         }
+
         @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
         }
     </style>
 </head>
+
 <body class="font-sans min-h-screen selection:bg-rust selection:text-white flex flex-col relative pb-24 md:pb-32">
 
     <!-- Texture Overlay -->
@@ -190,164 +221,231 @@
     </div>
 
     <!-- FLOATING PILL NAVIGATION -->
-    <nav class="fixed bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 z-[100] bg-white/90 backdrop-blur-md border border-line rounded-full p-1.5 md:p-2 flex items-center gap-1 md:gap-2 shadow-xl shadow-stone/10">
-        <button data-target="home-view" onclick="switchView('home-view')" class="pill-item magnetic p-2.5 md:p-3 rounded-full transition-all duration-300 text-rust bg-base" aria-label="Home">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+    <nav
+        class="fixed bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 z-[100] bg-white/90 backdrop-blur-md border border-line rounded-full p-1.5 md:p-2 flex items-center gap-1 md:gap-2 shadow-xl shadow-stone/10">
+        <button data-target="home-view" onclick="switchView('home-view')"
+            class="pill-item magnetic p-2.5 md:p-3 rounded-full transition-all duration-300 text-rust bg-base"
+            aria-label="Home">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                </path>
+            </svg>
         </button>
-        <button data-target="work-view" onclick="switchView('work-view')" class="pill-item magnetic p-2.5 md:p-3 rounded-full transition-all duration-300 text-stone hover:text-ink hover:bg-base/50" aria-label="Work">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+        <button data-target="work-view" onclick="switchView('work-view')"
+            class="pill-item magnetic p-2.5 md:p-3 rounded-full transition-all duration-300 text-stone hover:text-ink hover:bg-base/50"
+            aria-label="Work">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
+                </path>
+            </svg>
         </button>
-        <button data-target="about-view" onclick="switchView('about-view')" class="pill-item magnetic p-2.5 md:p-3 rounded-full transition-all duration-300 text-stone hover:text-ink hover:bg-base/50" aria-label="About">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+        <button data-target="about-view" onclick="switchView('about-view')"
+            class="pill-item magnetic p-2.5 md:p-3 rounded-full transition-all duration-300 text-stone hover:text-ink hover:bg-base/50"
+            aria-label="About">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+            </svg>
         </button>
-        <button data-target="contact-view" onclick="switchView('contact-view')" class="pill-item magnetic p-2.5 md:p-3 rounded-full transition-all duration-300 text-stone hover:text-ink hover:bg-base/50" aria-label="Contact">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+        <button data-target="contact-view" onclick="switchView('contact-view')"
+            class="pill-item magnetic p-2.5 md:p-3 rounded-full transition-all duration-300 text-stone hover:text-ink hover:bg-base/50"
+            aria-label="Contact">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                </path>
+            </svg>
         </button>
         <div class="w-px h-6 bg-line mx-1 md:mx-2"></div>
-        <a href="#" download="Neshwan_Resume.pdf" class="magnetic p-2.5 md:p-3 rounded-full transition-all duration-300 text-stone hover:text-rust hover:bg-rust/10 flex items-center justify-center gap-2 group" aria-label="Resume">
-            <span class="text-xs font-medium uppercase tracking-widest hidden md:block pl-2 text-ink group-hover:text-rust transition-colors">CV</span>
-            <svg class="w-5 h-5 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+        <a href="#" download="Neshwan_Resume.pdf"
+            class="magnetic p-2.5 md:p-3 rounded-full transition-all duration-300 text-stone hover:text-rust hover:bg-rust/10 flex items-center justify-center gap-2 group"
+            aria-label="Resume">
+            <span
+                class="text-xs font-medium uppercase tracking-widest hidden md:block pl-2 text-ink group-hover:text-rust transition-colors">CV</span>
+            <svg class="w-5 h-5 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+            </svg>
         </a>
     </nav>
 
     <!-- MAIN VIEWPORT container -->
     <main class="flex-grow w-full relative z-10 pt-24 md:pt-32">
-        
+
         <!-- ==================== HOME VIEW ==================== -->
         <div id="home-view" class="view-section view-active w-full max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 auto-rows-[minmax(200px,auto)] grid-flow-row-dense">
-                
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 auto-rows-[minmax(200px,auto)] grid-flow-row-dense">
+
                 <!-- ROW 1 & 2 -->
                 <!-- 1. HERO CARD -->
-                <article class="bento-card bento-item md:col-span-2 lg:col-span-2 md:row-span-2 lg:row-span-2 p-8 md:p-10 justify-between min-h-[400px]">
+                <article
+                    class="bento-card bento-item md:col-span-2 lg:col-span-2 md:row-span-2 lg:row-span-2 p-8 md:p-10 justify-between min-h-[400px]">
                     <div class="flex items-center justify-between">
                         <div class="label-text">01 &mdash; Profile</div>
                         <div class="flex items-center gap-2">
-                        <div class="w-2 h-2 rounded-full bg-rust pulse-dot"></div>
-                        <span class="label-text">Available</span>
+                            <div class="w-2 h-2 rounded-full bg-rust pulse-dot"></div>
+                            <span class="label-text">Available</span>
                         </div>
                     </div>
 
                     <div class="mt-auto flex flex-col gap-5">
-                        <h1 class="text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.05] tracking-tight font-medium text-ink">
-                        Hey, I'm Nashwan —<br>
-                        I build things, <span class="font-serif italic text-rust font-normal">then wonder<br>what's next.</span>
+                        <h1
+                            class="text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.05] tracking-tight font-medium text-ink">
+                            Hey, I'm Nashwan —<br>
+                            I build things, <span class="font-serif italic text-rust font-normal">then wonder<br>what's
+                                next.</span>
                         </h1>
                         <p class="text-stone text-base md:text-lg leading-relaxed font-light max-w-[34ch]">
-                        Software engineer with too many interests and enough skill to do something about it.
+                            Software engineer with too many interests and enough skill to do something about it.
                         </p>
                     </div>
 
                     <div class="flex items-center justify-between border-t border-line pt-6 mt-6">
-                        <button onclick="switchView('about-view')" class="text-sm font-medium border-b border-ink pb-0.5 hover:text-rust hover:border-rust transition-colors">Read full bio</button>
+                        <button onclick="switchView('about-view')"
+                            class="text-sm font-medium border-b border-ink pb-0.5 hover:text-rust hover:border-rust transition-colors">Read
+                            full bio</button>
                         <span class="font-serif italic text-stone text-sm">Kerala, India</span>
                     </div>
                 </article>
 
                 <!-- 2. CARTOON FACE -->
-                <article class="bento-card bento-item md:col-span-1 lg:col-span-1 md:row-span-2 lg:row-span-2 p-0 flex flex-col items-center justify-center relative overflow-hidden bg-white group" id="face-scene" style="perspective: 1200px; cursor: pointer;">
-                    <div class="absolute top-6 left-6 label-text z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Observer</div>
-<svg viewBox="0 0 200 300" id="face-card" style="filter: drop-shadow(6px 8px 0px rgba(0, 0, 0, 0.08)); transform-style: preserve-3d; width: 100%; height: 100%;">
-            
-            <!-- BODY LAYER (Slouched Developer Hoodie) -->
-            <g id="face-suit">
-                <!-- Hoodie outline (sketchy, slightly uneven) -->
-                <path d="M 40 300 C 45 220, 65 170, 100 170 C 135 170, 155 220, 160 300" fill="#fdfbf7" stroke="#000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                
-                <!-- Hoodie pocket -->
-                <path d="M 60 250 L 140 250 L 150 300 L 50 300 Z" fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round"/>
-                
-                <!-- Hoodie drawstrings -->
-                <path d="M 85 170 Q 80 200 88 225 M 115 170 Q 120 200 112 225" fill="none" stroke="#000" stroke-width="3.5" stroke-linecap="round"/>
-            </g>
+                <article
+                    class="bento-card bento-item md:col-span-1 lg:col-span-1 md:row-span-2 lg:row-span-2 p-0 flex flex-col items-center justify-center relative overflow-hidden bg-white group"
+                    id="face-scene" style="perspective: 1200px; cursor: pointer;">
+                    <div
+                        class="absolute top-6 left-6 label-text z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        Observer</div>
+                    <svg viewBox="0 0 200 300" id="face-card"
+                        style="filter: drop-shadow(6px 8px 0px rgba(0, 0, 0, 0.08)); transform-style: preserve-3d; width: 100%; height: 100%;">
 
-            <!-- HEAD LAYER (Pivots from the neck) -->
-            <g id="head-group">
-                <!-- Sketchy Neck -->
-                <line x1="94" y1="150" x2="92" y2="175" stroke="#000" stroke-width="4" stroke-linecap="round"/>
-                <line x1="106" y1="150" x2="108" y2="175" stroke="#000" stroke-width="4" stroke-linecap="round"/>
-                
-                <!-- Lumpy "Wimpy" Head Shape -->
-                <path d="M 48 95 C 43 50, 70 40, 102 44 C 135 48, 155 58, 152 98 C 149 140, 130 158, 98 155 C 65 152, 53 140, 48 95 Z" fill="#fdfbf7" stroke="#000" stroke-width="4.5" stroke-linejoin="round" />
-                
-                <!-- Messy Developer Hair (Just 3 wisps) -->
-                <path d="M 85 45 Q 80 25 72 20 M 102 44 Q 105 20 110 15 M 120 47 Q 130 30 138 25" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round"/>
-                
-                <!-- Unimpressed Wavy Mouth -->
-                <path d="M 82 132 Q 100 128 118 135" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+                        <!-- BODY LAYER (Slouched Developer Hoodie) -->
+                        <g id="face-suit">
+                            <!-- Hoodie outline (sketchy, slightly uneven) -->
+                            <path d="M 40 300 C 45 220, 65 170, 100 170 C 135 170, 155 220, 160 300" fill="#fdfbf7"
+                                stroke="#000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
 
-                <!-- Developer Glasses & Bags -->
-                <g class="accessories">
-                    <!-- Left Lens -->
-                    <rect x="54" y="80" width="34" height="26" rx="4" fill="none" stroke="#000" stroke-width="3.5" stroke-linejoin="round"/>
-                    <!-- Right Lens -->
-                    <rect x="112" y="80" width="34" height="26" rx="4" fill="none" stroke="#000" stroke-width="3.5" stroke-linejoin="round"/>
-                    <!-- Bridge -->
-                    <line x1="88" y1="92" x2="112" y2="92" stroke="#000" stroke-width="3.5" />
-                    <!-- Ear Stems -->
-                    <line x1="42" y1="90" x2="54" y2="90" stroke="#000" stroke-width="3.5" stroke-linecap="round"/>
-                    <line x1="146" y1="90" x2="158" y2="90" stroke="#000" stroke-width="3.5" stroke-linecap="round"/>
-                    
-                    <!-- Tired Under-Eye Bags -->
-                    <path d="M 58 112 Q 71 118 84 112 M 116 112 Q 129 118 142 112" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"/>
-                </g>
+                            <!-- Hoodie pocket -->
+                            <path d="M 60 250 L 140 250 L 150 300 L 50 300 Z" fill="none" stroke="#000" stroke-width="3"
+                                stroke-linejoin="round" />
 
-                <!-- EYES LAYER -->
-                <g class="eyes">
-                    <!-- Left Eye Base -->
-                    <ellipse id="eye-bg-l" cx="71" cy="93" rx="7" ry="11" fill="#fdfbf7" stroke="#000" stroke-width="2.5" />
-                    <!-- Left Pupil (Now black dots) -->
-                    <circle id="pupil-left" cx="71" cy="93" r="3" fill="#000" />
-                    
-                    <!-- Right Eye Base -->
-                    <ellipse id="eye-bg-r" cx="129" cy="93" rx="7" ry="11" fill="#fdfbf7" stroke="#000" stroke-width="2.5" />
-                    <!-- Right Pupil -->
-                    <circle id="pupil-right" cx="129" cy="93" r="3" fill="#000" />
-                </g>
-            </g>
-        </svg>
+                            <!-- Hoodie drawstrings -->
+                            <path d="M 85 170 Q 80 200 88 225 M 115 170 Q 120 200 112 225" fill="none" stroke="#000"
+                                stroke-width="3.5" stroke-linecap="round" />
+                        </g>
+
+                        <!-- HEAD LAYER (Pivots from the neck) -->
+                        <g id="head-group">
+                            <!-- Sketchy Neck -->
+                            <line x1="94" y1="150" x2="92" y2="175" stroke="#000" stroke-width="4"
+                                stroke-linecap="round" />
+                            <line x1="106" y1="150" x2="108" y2="175" stroke="#000" stroke-width="4"
+                                stroke-linecap="round" />
+
+                            <!-- Lumpy "Wimpy" Head Shape -->
+                            <path
+                                d="M 48 95 C 43 50, 70 40, 102 44 C 135 48, 155 58, 152 98 C 149 140, 130 158, 98 155 C 65 152, 53 140, 48 95 Z"
+                                fill="#fdfbf7" stroke="#000" stroke-width="4.5" stroke-linejoin="round" />
+
+                            <!-- Messy Developer Hair (Just 3 wisps) -->
+                            <path d="M 85 45 Q 80 25 72 20 M 102 44 Q 105 20 110 15 M 120 47 Q 130 30 138 25"
+                                fill="none" stroke="#000" stroke-width="4" stroke-linecap="round" />
+
+                            <!-- Unimpressed Wavy Mouth -->
+                            <path d="M 82 132 Q 100 128 118 135" fill="none" stroke="#000" stroke-width="3"
+                                stroke-linecap="round" />
+
+                            <!-- Developer Glasses & Bags -->
+                            <g class="accessories">
+                                <!-- Left Lens -->
+                                <rect x="54" y="80" width="34" height="26" rx="4" fill="none" stroke="#000"
+                                    stroke-width="3.5" stroke-linejoin="round" />
+                                <!-- Right Lens -->
+                                <rect x="112" y="80" width="34" height="26" rx="4" fill="none" stroke="#000"
+                                    stroke-width="3.5" stroke-linejoin="round" />
+                                <!-- Bridge -->
+                                <line x1="88" y1="92" x2="112" y2="92" stroke="#000" stroke-width="3.5" />
+                                <!-- Ear Stems -->
+                                <line x1="42" y1="90" x2="54" y2="90" stroke="#000" stroke-width="3.5"
+                                    stroke-linecap="round" />
+                                <line x1="146" y1="90" x2="158" y2="90" stroke="#000" stroke-width="3.5"
+                                    stroke-linecap="round" />
+
+                                <!-- Tired Under-Eye Bags -->
+                                <path d="M 58 112 Q 71 118 84 112 M 116 112 Q 129 118 142 112" fill="none" stroke="#000"
+                                    stroke-width="2" stroke-linecap="round" />
+                            </g>
+
+                            <!-- EYES LAYER -->
+                            <g class="eyes">
+                                <!-- Left Eye Base -->
+                                <ellipse id="eye-bg-l" cx="71" cy="93" rx="7" ry="11" fill="#fdfbf7" stroke="#000"
+                                    stroke-width="2.5" />
+                                <!-- Left Pupil (Now black dots) -->
+                                <circle id="pupil-left" cx="71" cy="93" r="3" fill="#000" />
+
+                                <!-- Right Eye Base -->
+                                <ellipse id="eye-bg-r" cx="129" cy="93" rx="7" ry="11" fill="#fdfbf7" stroke="#000"
+                                    stroke-width="2.5" />
+                                <!-- Right Pupil -->
+                                <circle id="pupil-right" cx="129" cy="93" r="3" fill="#000" />
+                            </g>
+                        </g>
+                    </svg>
                 </article>
 
                 <!-- 3. SKILLS / TAGS -->
-<article class="bento-card bento-item md:col-span-1 lg:col-span-1 md:row-span-2 lg:row-span-2 p-8 hover-3d">
-    <div class="label-text mb-6">Discipline</div>
-    <ul class="flex flex-col gap-4">
-        <li class="flex flex-col gap-0.5 border-b border-line pb-3">
-            <span class="text-ink font-medium text-sm">Backend Engineering</span>
-            <span class="text-stone text-xs font-light font-serif italic">Laravel, PHP, REST APIs</span>
-        </li>
-        <li class="flex flex-col gap-0.5 border-b border-line pb-3">
-            <span class="text-ink font-medium text-sm">Frontend & Interaction</span>
-            <span class="text-stone text-xs font-light font-serif italic">JavaScript, React, GSAP</span>
-        </li>
-        <li class="flex flex-col gap-0.5 border-b border-line pb-3">
-            <span class="text-ink font-medium text-sm">Mobile Development</span>
-            <span class="text-stone text-xs font-light font-serif italic">Flutter, Dart</span>
-        </li>
-        <li class="flex flex-col gap-0.5 border-b border-line pb-3">
-            <span class="text-ink font-medium text-sm">Machine Learning</span>
-            <span class="text-stone text-xs font-light font-serif italic">CNN, YOLO, Flask APIs</span>
-        </li>
-        <li class="flex flex-col gap-0.5 border-b border-line pb-3">
-            <span class="text-ink font-medium text-sm">Cloud & Infrastructure</span>
-            <span class="text-stone text-xs font-light font-serif italic">AWS, Queues, Data pipelines</span>
-        </li>
-        <li class="flex flex-col gap-0.5 border-b border-line pb-3">
-            <span class="text-ink font-medium text-sm">Hardware & Robotics</span>
-            <span class="text-stone text-xs font-light font-serif italic">Arduino, embedded systems</span>
-        </li>
-    </ul>
-</article>
+                <article
+                    class="bento-card bento-item md:col-span-1 lg:col-span-1 md:row-span-2 lg:row-span-2 p-8 hover-3d">
+                    <div class="label-text mb-6">Discipline</div>
+                    <ul class="flex flex-col gap-4">
+                        <li class="flex flex-col gap-0.5 border-b border-line pb-3">
+                            <span class="text-ink font-medium text-sm">Backend Engineering</span>
+                            <span class="text-stone text-xs font-light font-serif italic">Laravel, PHP, REST APIs</span>
+                        </li>
+                        <li class="flex flex-col gap-0.5 border-b border-line pb-3">
+                            <span class="text-ink font-medium text-sm">Frontend & Interaction</span>
+                            <span class="text-stone text-xs font-light font-serif italic">JavaScript, React, GSAP</span>
+                        </li>
+                        <li class="flex flex-col gap-0.5 border-b border-line pb-3">
+                            <span class="text-ink font-medium text-sm">Mobile Development</span>
+                            <span class="text-stone text-xs font-light font-serif italic">Flutter, Dart</span>
+                        </li>
+                        <li class="flex flex-col gap-0.5 border-b border-line pb-3">
+                            <span class="text-ink font-medium text-sm">Machine Learning</span>
+                            <span class="text-stone text-xs font-light font-serif italic">CNN, YOLO, Flask APIs</span>
+                        </li>
+                        <li class="flex flex-col gap-0.5 border-b border-line pb-3">
+                            <span class="text-ink font-medium text-sm">Cloud & Infrastructure</span>
+                            <span class="text-stone text-xs font-light font-serif italic">AWS, Queues, Data
+                                pipelines</span>
+                        </li>
+                        <li class="flex flex-col gap-0.5 border-b border-line pb-3">
+                            <span class="text-ink font-medium text-sm">Hardware & Robotics</span>
+                            <span class="text-stone text-xs font-light font-serif italic">Arduino, embedded
+                                systems</span>
+                        </li>
+                    </ul>
+                </article>
 
                 <!-- 4. LOCATION / RADAR CARD -->
-                <article class="bento-card bento-item md:col-span-1 lg:col-span-1 md:row-span-1 lg:row-span-1 p-8 flex flex-col justify-between hover-3d relative overflow-hidden">
+                <article
+                    class="bento-card bento-item md:col-span-1 lg:col-span-1 md:row-span-1 lg:row-span-1 p-8 flex flex-col justify-between hover-3d relative overflow-hidden">
                     <div class="label-text mb-4 z-10 relative">Status</div>
                     <!-- Abstract Map Background -->
-                    <svg class="absolute inset-0 w-full h-full opacity-10 blur-[0.5px] pointer-events-none" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="50" cy="50" r="40" stroke="#1A1A1A" stroke-width="0.5" stroke-dasharray="2 2"/>
-                        <circle cx="50" cy="50" r="25" stroke="#1A1A1A" stroke-width="0.5"/>
-                        <line x1="10" y1="50" x2="90" y2="50" stroke="#1A1A1A" stroke-width="0.5"/>
-                        <line x1="50" y1="10" x2="50" y2="90" stroke="#1A1A1A" stroke-width="0.5"/>
+                    <svg class="absolute inset-0 w-full h-full opacity-10 blur-[0.5px] pointer-events-none"
+                        viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="40" stroke="#1A1A1A" stroke-width="0.5" stroke-dasharray="2 2" />
+                        <circle cx="50" cy="50" r="25" stroke="#1A1A1A" stroke-width="0.5" />
+                        <line x1="10" y1="50" x2="90" y2="50" stroke="#1A1A1A" stroke-width="0.5" />
+                        <line x1="50" y1="10" x2="50" y2="90" stroke="#1A1A1A" stroke-width="0.5" />
                     </svg>
                     <div class="z-10 relative mt-auto flex items-center gap-4">
                         <div class="w-3 h-3 rounded-full bg-rust pulse-dot relative flex-shrink-0">
@@ -362,10 +460,12 @@
 
                 <!-- ROW 3 -->
                 <!-- 5. EXPERIENCE SHORT -->
-                <article class="bento-card bento-item md:col-span-1 lg:col-span-1 md:row-span-1 lg:row-span-1 p-8 flex flex-col justify-between hover-3d cursor-pointer" onclick="switchView('about-view')">
+                <article
+                    class="bento-card bento-item md:col-span-1 lg:col-span-1 md:row-span-1 lg:row-span-1 p-8 flex flex-col justify-between hover-3d cursor-pointer"
+                    onclick="switchView('about-view')">
                     <div class="label-text mb-4">Focus</div>
                     <div class="mt-auto">
-                       <h4 class="text-ink font-medium text-xl mb-1">
+                        <h4 class="text-ink font-medium text-xl mb-1">
                             Systems that scale
                         </h4>
                         <p class="text-stone text-sm font-serif italic">
@@ -375,7 +475,8 @@
                 </article>
 
                 <!-- 6. ETHOS -->
-                <article class="bento-card bento-item md:col-span-2 lg:col-span-2 md:row-span-1 lg:row-span-1 p-8 md:p-10 flex flex-col justify-center hover-3d">
+                <article
+                    class="bento-card bento-item md:col-span-2 lg:col-span-2 md:row-span-1 lg:row-span-1 p-8 md:p-10 flex flex-col justify-center hover-3d">
                     <div class="label-text mb-4">02 &mdash; Ethos</div>
                     <p class="text-lg md:text-xl text-ink leading-relaxed font-serif">
                         "Great digital architecture feels entirely invisible to the end user."
@@ -383,71 +484,93 @@
                 </article>
 
                 <!-- 7. WORKFLOW / PROCESS CARD -->
-<article class="bento-card bento-item md:col-span-2 lg:col-span-1 md:row-span-1 lg:row-span-1 p-8 flex flex-col justify-center relative overflow-hidden hover-3d">
+                <article
+                    class="bento-card bento-item md:col-span-2 lg:col-span-1 md:row-span-1 lg:row-span-1 p-8 flex flex-col justify-center relative overflow-hidden hover-3d">
 
-    <!-- Label -->
-    <div class="label-text mb-6">Process</div>
+                    <!-- Label -->
+                    <div class="label-text mb-6">Process</div>
 
-    <!-- Flow Labels -->
-    <div class="flex items-center justify-between relative z-10 w-full px-2 text-xs font-medium tracking-wide">
-        <div class="text-ink">Data</div>
-        <div class="text-stone">Systems</div>
-        <div class="text-rust">Interface</div>
-    </div>
+                    <!-- Flow Labels -->
+                    <div
+                        class="flex items-center justify-between relative z-10 w-full px-2 text-xs font-medium tracking-wide">
+                        <div class="text-ink">Data</div>
+                        <div class="text-stone">Systems</div>
+                        <div class="text-rust">Interface</div>
+                    </div>
 
-    <!-- Flow Line -->
-    <svg class="absolute bottom-8 left-0 w-full h-4 flow-line pointer-events-none" viewBox="0 0 100 10" preserveAspectRatio="none">
-        <path 
-            d="M 0,6 Q 30,2 50,6 T 100,6" 
-            fill="none" 
-            stroke="#C85A3C" 
-            stroke-width="1.2"
-            stroke-linecap="round"
-        />
-    </svg>
+                    <!-- Flow Line -->
+                    <svg class="absolute bottom-8 left-0 w-full h-4 flow-line pointer-events-none" viewBox="0 0 100 10"
+                        preserveAspectRatio="none">
+                        <path d="M 0,6 Q 30,2 50,6 T 100,6" fill="none" stroke="#C85A3C" stroke-width="1.2"
+                            stroke-linecap="round" />
+                    </svg>
 
-</article>
+                </article>
 
                 <!-- 8. METRICS / STATS BANNER -->
-                <article class="bento-card bento-item md:col-span-2 lg:col-span-3 md:row-span-1 lg:row-span-1 bg-rust text-white border-none p-8 md:p-10 flex flex-col md:flex-row justify-between items-start md:items-center cursor-pointer hover:bg-[#b04d31] transition-colors duration-300 hover-3d" onclick="switchView('work-view')">
+                <article
+                    class="bento-card bento-item md:col-span-2 lg:col-span-3 md:row-span-1 lg:row-span-1 bg-rust text-white border-none p-8 md:p-10 flex flex-col md:flex-row justify-between items-start md:items-center cursor-pointer hover:bg-[#b04d31] transition-colors duration-300 hover-3d"
+                    onclick="switchView('contact-view')">
                     <div class="flex flex-col mb-4 md:mb-0">
-                        <div class="label-text !text-white/70 mb-2">Archive</div>
-                        <p class="text-white/90 text-lg md:text-xl font-light">Explore a comprehensive index of deployed systems and interfaces.</p>
+                        <div class="label-text !text-white/70 mb-2">Available for work</div>
+                        <p class="text-white/90 text-lg md:text-xl font-light max-w-md">
+                            Open to full-time roles, internships, and interesting side projects.
+                        </p>
                     </div>
-                    <div class="flex items-center gap-4">
-                        <div class="text-5xl md:text-6xl font-medium tracking-tighter font-serif italic"><span class="counter" data-target="40">0</span>+</div>
-                        <div class="text-white/80 text-sm font-light uppercase tracking-widest leading-tight">Projects<br>Deployed</div>
+                    <div class="flex items-center gap-4 flex-shrink-0">
+                        <div class="flex flex-col items-end gap-1">
+                            <span class="text-2xl md:text-3xl font-medium tracking-tight">Let's talk.</span>
+                            <span class="font-serif italic text-white/70 text-sm">— get in touch</span>
+                        </div>
+                        <svg class="w-8 h-8 text-white/80 flex-shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
                     </div>
                 </article>
 
                 <!-- ROW 4 & 5 (PROJECTS REVEALED AT BOTTOM) -->
-                
+
                 <!-- 9. FEATURED PROJECT 1 -->
-                <article onclick="openProject('chatbot')" class="bento-card bento-item md:col-span-2 lg:col-span-2 md:row-span-2 lg:row-span-2 group cursor-pointer min-h-[400px] hover-3d mt-4 md:mt-8">
-                    <div class="absolute top-6 left-6 z-10 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center gap-2 border border-line transition-colors group-hover:border-rust/30 shadow-sm">
+                <article onclick="openProject('chatbot')"
+                    class="bento-card bento-item md:col-span-2 lg:col-span-2 md:row-span-2 lg:row-span-2 group cursor-pointer min-h-[400px] hover-3d mt-4 md:mt-8">
+                    <div
+                        class="absolute top-6 left-6 z-10 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center gap-2 border border-line transition-colors group-hover:border-rust/30 shadow-sm">
                         <div class="w-2 h-2 rounded-full bg-rust"></div>
-                        <span class="label-text !text-ink !tracking-normal">Custom Chatbot Builder &mdash; AI Assistant</span>
+                        <span class="label-text !text-ink !tracking-normal">Custom Chatbot Builder &mdash; AI
+                            Assistant</span>
                     </div>
                     <div class="img-wrapper pointer-events-none">
-                        <img src="images/chatbot/Screenshot%202026-03-30%20at%2012.45.52%20PM.png" alt="Custom Chatbot Builder">
+                        <img src="images/chatbot/Screenshot%202026-03-30%20at%2012.45.52%20PM.png"
+                            alt="Custom Chatbot Builder">
                     </div>
                 </article>
 
                 <!-- 9. FEATURED PROJECT 2 -->
-                <article onclick="openProject('college')" class="bento-card bento-item md:col-span-2 lg:col-span-2 md:row-span-2 lg:row-span-2 group cursor-pointer min-h-[400px] hover-3d mt-4 md:mt-8">
-                    <div class="absolute top-6 left-6 z-10 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center gap-2 border border-line transition-colors group-hover:border-rust/30 shadow-sm">
+                <article onclick="openProject('college')"
+                    class="bento-card bento-item md:col-span-2 lg:col-span-2 md:row-span-2 lg:row-span-2 group cursor-pointer min-h-[400px] hover-3d mt-4 md:mt-8">
+                    <div
+                        class="absolute top-6 left-6 z-10 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center gap-2 border border-line transition-colors group-hover:border-rust/30 shadow-sm">
                         <span class="label-text !text-ink !tracking-normal">College CMS Website</span>
                     </div>
                     <div class="img-wrapper pointer-events-none">
-                        <img src="images/college/Screenshot%202026-03-30%20at%2011.31.35%20AM.png" alt="College CMS Website">
+                        <img src="images/college/Screenshot%202026-03-30%20at%2011.31.35%20AM.png"
+                            alt="College CMS Website">
                     </div>
                 </article>
 
                 <!-- 10. VIEW ALL CTA -->
-                <article class="bento-card bento-item md:col-span-2 lg:col-span-4 p-8 flex justify-center items-center bg-transparent border-none shadow-none hover:shadow-none hover:border-transparent mt-4 mb-10">
-                    <button onclick="switchView('work-view')" class="magnetic flex flex-col items-center gap-2 text-stone hover:text-rust transition-colors">
+                <article
+                    class="bento-card bento-item md:col-span-2 lg:col-span-4 p-8 flex justify-center items-center bg-transparent border-none shadow-none hover:shadow-none hover:border-transparent mt-4 mb-10">
+                    <button onclick="switchView('work-view')"
+                        class="magnetic flex flex-col items-center gap-2 text-stone hover:text-rust transition-colors">
                         <span class="font-serif italic text-lg">View complete archive</span>
-                        <svg class="w-5 h-5 animate-bounce mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                        <svg class="w-5 h-5 animate-bounce mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                        </svg>
                     </button>
                 </article>
             </div>
@@ -456,203 +579,265 @@
         <!-- ==================== WORK VIEW ==================== -->
         <div id="work-view" class="view-section w-full max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 pb-20">
             <header class="mb-12 bento-item">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-4">Selected <span class="font-serif italic text-rust">Works.</span></h1>
-                <p class="text-stone text-lg max-w-2xl font-light">A comprehensive index of applications, experimental interfaces, and machine learning models I've developed.</p>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-ink mb-4">Selected <span
+                        class="font-serif italic text-rust">Works.</span></h1>
+                <p class="text-stone text-lg max-w-2xl font-light">A comprehensive index of applications, experimental
+                    interfaces, and machine learning models I've developed.</p>
                 <div class="mt-8 flex flex-wrap gap-3" id="work-filters">
-                    <button class="filter-btn active text-sm px-4 py-2 rounded-full border border-rust bg-base text-rust transition-colors hover:border-rust magnetic" data-filter="all">All</button>
-                    <button class="filter-btn text-sm px-4 py-2 rounded-full border border-line bg-white/50 text-stone transition-colors hover:border-rust hover:text-ink magnetic" data-filter="ml-ai">ML & AI</button>
-                    <button class="filter-btn text-sm px-4 py-2 rounded-full border border-line bg-white/50 text-stone transition-colors hover:border-rust hover:text-ink magnetic" data-filter="web">Web & Apps</button>
-                    <button class="filter-btn text-sm px-4 py-2 rounded-full border border-line bg-white/50 text-stone transition-colors hover:border-rust hover:text-ink magnetic" data-filter="platform">Platform</button>
+                    <button
+                        class="filter-btn active text-sm px-4 py-2 rounded-full border border-rust bg-base text-rust transition-colors hover:border-rust magnetic"
+                        data-filter="all">All</button>
+                    <button
+                        class="filter-btn text-sm px-4 py-2 rounded-full border border-line bg-white/50 text-stone transition-colors hover:border-rust hover:text-ink magnetic"
+                        data-filter="ml-ai">ML & AI</button>
+                    <button
+                        class="filter-btn text-sm px-4 py-2 rounded-full border border-line bg-white/50 text-stone transition-colors hover:border-rust hover:text-ink magnetic"
+                        data-filter="web">Web & Apps</button>
+                    <button
+                        class="filter-btn text-sm px-4 py-2 rounded-full border border-line bg-white/50 text-stone transition-colors hover:border-rust hover:text-ink magnetic"
+                        data-filter="platform">Platform</button>
                 </div>
             </header>
-            
-            <div id="work-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 auto-rows-[minmax(300px,400px)]">
+
+            <div id="work-grid"
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 auto-rows-[minmax(300px,400px)]">
                 <!-- Projects will be dynamically injected here -->
             </div>
         </div>
 
         <!-- ==================== ABOUT VIEW ==================== -->
-<!-- ==================== ABOUT VIEW ==================== -->
-<div id="about-view" class="view-section w-full max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 pb-20">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 auto-rows-[minmax(200px,auto)]">
+        <!-- ==================== ABOUT VIEW ==================== -->
+        <div id="about-view" class="view-section w-full max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 pb-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 auto-rows-[minmax(200px,auto)]">
 
-        <!-- Main Bio -->
-        <article class="bento-card bento-item lg:col-span-4 p-8 md:p-12 lg:p-16 flex flex-col md:flex-row gap-12 items-start">
-            <div class="md:w-1/3">
-                <div class="label-text mb-4">Profile & Ethos</div>
-                <h2 class="text-3xl lg:text-5xl font-medium tracking-tight text-ink leading-[1.1]">
-                    Curious by default.<br>
-                    <span class="font-serif italic text-rust">Engineer</span><br>
-                    by training.
-                </h2>
-            </div>
-            <div class="md:w-2/3 flex flex-col gap-6 text-stone text-lg font-light leading-relaxed">
-                <p>
-                   I'm Nashwan — a software engineer from Kerala with a habit of going wherever curiosity points. I started with HTML and CSS, picked up JavaScript, got into WordPress, moved into Laravel backends, tried Flutter for mobile, dabbled in robotics with Arduino, and ended up training machine learning models. No grand plan. Just an inability to stop learning.
-                </p>
-                <p>
-                    I spent 9 months as an Associate Software Engineer at Axel Technologies, building a live SaaS CRM — REST APIs, role-based auth, background queues, large-scale exports. Before that, internships in Flutter development and robotics. The common thread isn't a stack. It's that I pick things up fast and build something real with them.
-                </p>
-                <p class="font-serif italic text-xl text-ink mt-2">
-                    "Curiosity has occasionally gotten me in trouble. But even when it has, it's been interesting trouble." — Brian Grazer
-                </p>
-            </div>
-        </article>
+                <!-- Main Bio -->
+                <article
+                    class="bento-card bento-item lg:col-span-4 p-8 md:p-12 lg:p-16 flex flex-col md:flex-row gap-12 items-start">
+                    <div class="md:w-1/3">
+                        <div class="label-text mb-4">Profile & Ethos</div>
+                        <h2 class="text-3xl lg:text-5xl font-medium tracking-tight text-ink leading-[1.1]">
+                            Curious by default.<br>
+                            <span class="font-serif italic text-rust">Engineer</span><br>
+                            by training.
+                        </h2>
+                    </div>
+                    <div class="md:w-2/3 flex flex-col gap-6 text-stone text-lg font-light leading-relaxed">
+                        <p>
+                            I'm Nashwan — a software engineer from Kerala with a habit of going wherever curiosity
+                            points. I started with HTML and CSS, picked up JavaScript, got into WordPress, moved into
+                            Laravel backends, tried Flutter for mobile, dabbled in robotics with Arduino, and ended up
+                            training machine learning models. No grand plan. Just an inability to stop learning.
+                        </p>
+                        <p>
+                            I spent 9 months as an Associate Software Engineer at Axel Technologies, building a live
+                            SaaS CRM — REST APIs, role-based auth, background queues, large-scale exports. Before that,
+                            internships in Flutter development and robotics. The common thread isn't a stack. It's that
+                            I pick things up fast and build something real with them.
+                        </p>
+                        <p class="font-serif italic text-xl text-ink mt-2">
+                            "Curiosity has occasionally gotten me in trouble. But even when it has, it's been
+                            interesting trouble." — Brian Grazer
+                        </p>
+                    </div>
+                </article>
 
-        <!-- Technical Arsenal -->
-<article class="bento-card bento-item lg:col-span-2 p-8 md:p-10 hover-3d">
-    <div class="label-text mb-8">Technical Arsenal</div>
-    <div class="flex flex-col gap-5">
+                <!-- Technical Arsenal -->
+                <article class="bento-card bento-item lg:col-span-2 p-8 md:p-10 hover-3d">
+                    <div class="label-text mb-8">Technical Arsenal</div>
+                    <div class="flex flex-col gap-5">
 
-        <div>
-            <div class="font-serif italic text-rust text-sm mb-3">Backend</div>
-            <div class="flex flex-wrap gap-2">
-                <span class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">Laravel</span>
-                <span class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">PHP</span>
-                <span class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">Python</span>
-                <span class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">Flask</span>
-                <span class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">REST APIs</span>
-                <span class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">MySQL / SQL</span>
+                        <div>
+                            <div class="font-serif italic text-rust text-sm mb-3">Backend</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">Laravel</span>
+                                <span
+                                    class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">PHP</span>
+                                <span
+                                    class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">Python</span>
+                                <span
+                                    class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">Flask</span>
+                                <span
+                                    class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">REST
+                                    APIs</span>
+                                <span
+                                    class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">MySQL
+                                    / SQL</span>
+                            </div>
+                        </div>
+
+                        <div class="w-full h-px bg-line"></div>
+
+                        <div>
+                            <div class="font-serif italic text-rust text-sm mb-3">Frontend</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">JavaScript</span>
+                                <span
+                                    class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">React</span>
+                                <span
+                                    class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">Inertia.js</span>
+                                <span
+                                    class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">GSAP</span>
+                                <span
+                                    class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">HTML
+                                    / CSS</span>
+                                <span
+                                    class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">WordPress</span>
+                            </div>
+                        </div>
+
+                        <div class="w-full h-px bg-line"></div>
+
+                        <div>
+                            <div class="font-serif italic text-rust text-sm mb-3">Mobile & Hardware</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">Flutter</span>
+                                <span
+                                    class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">Dart</span>
+                                <span
+                                    class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">Arduino</span>
+                            </div>
+                        </div>
+
+                        <div class="w-full h-px bg-line"></div>
+
+                        <div>
+                            <div class="font-serif italic text-rust text-sm mb-3">Machine Learning</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">CNN</span>
+                                <span
+                                    class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">YOLO</span>
+                                <span
+                                    class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">EfficientNet</span>
+                                <span
+                                    class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">LSTM</span>
+                                <span
+                                    class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">MediaPipe</span>
+                            </div>
+                        </div>
+
+                        <div class="w-full h-px bg-line"></div>
+
+                        <div>
+                            <div class="font-serif italic text-rust text-sm mb-3">Cloud & Tooling</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">AWS
+                                    (CCP)</span>
+                                <span
+                                    class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">Git</span>
+                                <span
+                                    class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">Queues
+                                    & Jobs</span>
+                                <span
+                                    class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">JSON
+                                    / CSV</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+
+                <!-- Timeline -->
+                <article class="bento-card bento-item lg:col-span-2 p-8 md:p-10 flex flex-col hover-3d">
+                    <div class="label-text mb-8">Timeline</div>
+                    <div class="flex flex-col gap-7">
+
+                        <div class="flex flex-col gap-1">
+                            <div class="flex justify-between items-baseline">
+                                <h4 class="text-ink font-medium text-base">Associate Software Engineer</h4>
+                                <span class="text-stone text-xs flex-shrink-0 ml-4">2025 — 2026</span>
+                            </div>
+                            <p class="font-serif italic text-rust text-sm">Axel Technologies, Kozhikode</p>
+                            <p class="text-sm text-stone font-light leading-relaxed">Built and shipped a live SaaS CRM —
+                                Laravel, Inertia React, REST APIs, role-based auth, background queues, and large-scale
+                                data exports.</p>
+                        </div>
+
+                        <div class="w-full h-px bg-line"></div>
+
+                        <div class="flex flex-col gap-1">
+                            <div class="flex justify-between items-baseline">
+                                <h4 class="text-ink font-medium text-base">Flutter Developer Intern</h4>
+                                <span class="text-stone text-xs flex-shrink-0 ml-4">Jul — Aug 2024</span>
+                            </div>
+                            <p class="font-serif italic text-rust text-sm">MaiTexa IT Solutions</p>
+                            <p class="text-sm text-stone font-light leading-relaxed">Built cross-platform mobile apps
+                                with Flutter. Designed and implemented user-friendly interfaces in collaboration with
+                                design teams.</p>
+                        </div>
+
+                        <div class="w-full h-px bg-line"></div>
+
+                        <div class="flex flex-col gap-1">
+                            <div class="flex justify-between items-baseline">
+                                <h4 class="text-ink font-medium text-base">WordPress Developer</h4>
+                                <span class="text-stone text-xs flex-shrink-0 ml-4">May — Jul 2023</span>
+                            </div>
+                            <p class="font-serif italic text-rust text-sm">Self-employed</p>
+                            <p class="text-sm text-stone font-light leading-relaxed">Designed and developed commercial
+                                WordPress sites. Responsive design, custom content, and client delivery.</p>
+                        </div>
+
+                        <div class="w-full h-px bg-line"></div>
+
+                        <div class="flex flex-col gap-1">
+                            <div class="flex justify-between items-baseline">
+                                <h4 class="text-ink font-medium text-base">Robotics Intern</h4>
+                                <span class="text-stone text-xs flex-shrink-0 ml-4">Jun — Jul 2023</span>
+                            </div>
+                            <p class="font-serif italic text-rust text-sm">Academor</p>
+                            <p class="text-sm text-stone font-light leading-relaxed">Programmed robotic systems using
+                                Arduino. Built task-specific solutions and sharpened low-level problem-solving skills.
+                            </p>
+                        </div>
+
+                        <div class="w-full h-px bg-line"></div>
+
+                        <div class="flex flex-col gap-1">
+                            <div class="flex justify-between items-baseline">
+                                <h4 class="text-ink font-medium text-base">BTech · Information Technology</h4>
+                                <span class="text-stone text-xs flex-shrink-0 ml-4">First Class</span>
+                            </div>
+                            <p class="font-serif italic text-rust text-sm">CUIET, Calicut University</p>
+                        </div>
+
+                    </div>
+                </article>
+
             </div>
         </div>
-
-        <div class="w-full h-px bg-line"></div>
-
-        <div>
-            <div class="font-serif italic text-rust text-sm mb-3">Frontend</div>
-            <div class="flex flex-wrap gap-2">
-                <span class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">JavaScript</span>
-                <span class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">React</span>
-                <span class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">Inertia.js</span>
-                <span class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">GSAP</span>
-                <span class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">HTML / CSS</span>
-                <span class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">WordPress</span>
-            </div>
-        </div>
-
-        <div class="w-full h-px bg-line"></div>
-
-        <div>
-            <div class="font-serif italic text-rust text-sm mb-3">Mobile & Hardware</div>
-            <div class="flex flex-wrap gap-2">
-                <span class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">Flutter</span>
-                <span class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">Dart</span>
-                <span class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">Arduino</span>
-            </div>
-        </div>
-
-        <div class="w-full h-px bg-line"></div>
-
-        <div>
-            <div class="font-serif italic text-rust text-sm mb-3">Machine Learning</div>
-            <div class="flex flex-wrap gap-2">
-                <span class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">CNN</span>
-                <span class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">YOLO</span>
-                <span class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">EfficientNet</span>
-                <span class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">LSTM</span>
-                <span class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">MediaPipe</span>
-            </div>
-        </div>
-
-        <div class="w-full h-px bg-line"></div>
-
-        <div>
-            <div class="font-serif italic text-rust text-sm mb-3">Cloud & Tooling</div>
-            <div class="flex flex-wrap gap-2">
-                <span class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">AWS (CCP)</span>
-                <span class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">Git</span>
-                <span class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">Queues & Jobs</span>
-                <span class="text-xs font-medium text-ink bg-base border border-line rounded-md px-3 py-1.5">JSON / CSV</span>
-            </div>
-        </div>
-
-    </div>
-</article>
-
-        <!-- Timeline -->
-        <article class="bento-card bento-item lg:col-span-2 p-8 md:p-10 flex flex-col hover-3d">
-            <div class="label-text mb-8">Timeline</div>
-            <div class="flex flex-col gap-7">
-
-                <div class="flex flex-col gap-1">
-                    <div class="flex justify-between items-baseline">
-                        <h4 class="text-ink font-medium text-base">Associate Software Engineer</h4>
-                        <span class="text-stone text-xs flex-shrink-0 ml-4">2025 — 2026</span>
-                    </div>
-                    <p class="font-serif italic text-rust text-sm">Axel Technologies, Kozhikode</p>
-                    <p class="text-sm text-stone font-light leading-relaxed">Built and shipped a live SaaS CRM — Laravel, Inertia React, REST APIs, role-based auth, background queues, and large-scale data exports.</p>
-                </div>
-
-                <div class="w-full h-px bg-line"></div>
-
-                <div class="flex flex-col gap-1">
-                    <div class="flex justify-between items-baseline">
-                        <h4 class="text-ink font-medium text-base">Flutter Developer Intern</h4>
-                        <span class="text-stone text-xs flex-shrink-0 ml-4">Jul — Aug 2024</span>
-                    </div>
-                    <p class="font-serif italic text-rust text-sm">MaiTexa IT Solutions</p>
-                    <p class="text-sm text-stone font-light leading-relaxed">Built cross-platform mobile apps with Flutter. Designed and implemented user-friendly interfaces in collaboration with design teams.</p>
-                </div>
-
-                <div class="w-full h-px bg-line"></div>
-
-                <div class="flex flex-col gap-1">
-                    <div class="flex justify-between items-baseline">
-                        <h4 class="text-ink font-medium text-base">WordPress Developer</h4>
-                        <span class="text-stone text-xs flex-shrink-0 ml-4">May — Jul 2023</span>
-                    </div>
-                    <p class="font-serif italic text-rust text-sm">Self-employed</p>
-                    <p class="text-sm text-stone font-light leading-relaxed">Designed and developed commercial WordPress sites. Responsive design, custom content, and client delivery.</p>
-                </div>
-
-                <div class="w-full h-px bg-line"></div>
-
-                <div class="flex flex-col gap-1">
-                    <div class="flex justify-between items-baseline">
-                        <h4 class="text-ink font-medium text-base">Robotics Intern</h4>
-                        <span class="text-stone text-xs flex-shrink-0 ml-4">Jun — Jul 2023</span>
-                    </div>
-                    <p class="font-serif italic text-rust text-sm">Academor</p>
-                    <p class="text-sm text-stone font-light leading-relaxed">Programmed robotic systems using Arduino. Built task-specific solutions and sharpened low-level problem-solving skills.</p>
-                </div>
-
-                <div class="w-full h-px bg-line"></div>
-
-                <div class="flex flex-col gap-1">
-                    <div class="flex justify-between items-baseline">
-                        <h4 class="text-ink font-medium text-base">BTech · Information Technology</h4>
-                        <span class="text-stone text-xs flex-shrink-0 ml-4">First Class</span>
-                    </div>
-                    <p class="font-serif italic text-rust text-sm">CUIET, Calicut University</p>
-                </div>
-
-            </div>
-        </article>
-
-    </div>
-</div>
 
         <!-- ==================== CONTACT VIEW ==================== -->
         <div id="contact-view" class="view-section w-full max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 pb-20">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-5">
-                
+
                 <!-- Contact Intro -->
-                <article class="bento-card bento-item p-8 md:p-12 lg:p-16 flex flex-col justify-between min-h-[500px] bg-ink text-white hover-3d">
+                <article
+                    class="bento-card bento-item p-8 md:p-12 lg:p-16 flex flex-col justify-between min-h-[500px] bg-ink text-white hover-3d">
                     <div>
                         <div class="label-text !text-white/60 mb-6">Let's build together</div>
                         <h1 class="text-5xl md:text-6xl lg:text-[5rem] leading-[1] font-medium tracking-tight mb-6">
                             Start a <br><span class="font-serif italic text-rust">conversation.</span>
                         </h1>
                         <p class="text-white/80 font-light text-lg max-w-sm">
-                            Whether it's a new project, a technical collaboration, or just a quick hello, I'm always open to discussing new ideas.
+                            Whether it's a new project, a technical collaboration, or just a quick hello, I'm always
+                            open to discussing new ideas.
                         </p>
                     </div>
                     <div class="mt-12 flex flex-col gap-4">
-                        <a href="mailto:hello@example.com" class="text-2xl md:text-3xl font-serif italic hover:text-rust transition-colors w-max magnetic">hello@neshwan.dev</a>
+                        <a href="mailto:hello@example.com"
+                            class="text-2xl md:text-3xl font-serif italic hover:text-rust transition-colors w-max magnetic">hello@neshwan.dev</a>
                         <div class="flex gap-6 mt-4 relative z-20">
-                            <a href="#" class="text-sm uppercase tracking-widest text-white/60 hover:text-white transition-colors">LinkedIn</a>
-                            <a href="#" class="text-sm uppercase tracking-widest text-white/60 hover:text-white transition-colors">GitHub</a>
-                            <a href="#" class="text-sm uppercase tracking-widest text-white/60 hover:text-white transition-colors">Twitter</a>
+                            <a href="#"
+                                class="text-sm uppercase tracking-widest text-white/60 hover:text-white transition-colors">LinkedIn</a>
+                            <a href="#"
+                                class="text-sm uppercase tracking-widest text-white/60 hover:text-white transition-colors">GitHub</a>
+                            <a href="#"
+                                class="text-sm uppercase tracking-widest text-white/60 hover:text-white transition-colors">Twitter</a>
                         </div>
                     </div>
                 </article>
@@ -660,16 +845,19 @@
                 <!-- Contact Form -->
                 <article class="bento-card bento-item p-8 md:p-12 lg:p-16 min-h-[500px] hover-3d">
                     <div class="label-text mb-12">Direct Message</div>
-                    <form class="flex flex-col gap-8 h-full relative z-20" onsubmit="event.preventDefault(); alert('Form submitted!');">
+                    <form class="flex flex-col gap-8 h-full relative z-20"
+                        onsubmit="event.preventDefault(); alert('Form submitted!');">
                         <div class="flex flex-col md:flex-row gap-8">
                             <input type="text" placeholder="What's your name?" required>
                             <input type="email" placeholder="Your email address?" required>
                         </div>
                         <div class="flex-grow">
-                            <textarea placeholder="Tell me about your project or idea..." class="h-full min-h-[150px] resize-none" required></textarea>
+                            <textarea placeholder="Tell me about your project or idea..."
+                                class="h-full min-h-[150px] resize-none" required></textarea>
                         </div>
                         <div class="mt-auto flex justify-end">
-                            <button type="submit" class="magnetic px-8 py-4 bg-ink text-white rounded-full font-medium hover:bg-rust transition-colors duration-300">
+                            <button type="submit"
+                                class="magnetic px-8 py-4 bg-ink text-white rounded-full font-medium hover:bg-rust transition-colors duration-300">
                                 Send Message
                             </button>
                         </div>
@@ -682,19 +870,29 @@
 
     <!-- ==================== PROJECT DETAIL VIEW ==================== -->
     <div id="project-view" class="fixed inset-0 bg-base overflow-y-auto w-full z-[60] view-section pb-32">
-        <article class="max-w-[1000px] mx-auto px-4 sm:px-6 md:px-8 py-12 md:py-20 relative z-10 min-h-screen flex flex-col">
-            
+        <article
+            class="max-w-[1000px] mx-auto px-4 sm:px-6 md:px-8 py-12 md:py-20 relative z-10 min-h-screen flex flex-col">
+
             <!-- Back Navigation -->
-            <button onclick="closeProject()" class="group flex w-max items-center gap-3 text-stone hover:text-rust transition-colors mb-16 md:mb-24 proj-elem cursor-pointer magnetic">
-                <svg class="w-4 h-4 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-                <span class="text-sm font-medium tracking-wide uppercase label-text !text-inherit">Back to Framework</span>
+            <button onclick="closeProject()"
+                class="group flex w-max items-center gap-3 text-stone hover:text-rust transition-colors mb-16 md:mb-24 proj-elem cursor-pointer magnetic">
+                <svg class="w-4 h-4 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                <span class="text-sm font-medium tracking-wide uppercase label-text !text-inherit">Back to
+                    Framework</span>
             </button>
 
             <!-- Hero Section -->
             <header class="mb-12 md:mb-16 proj-elem">
-                <div class="label-text mb-6 inline-block px-3 py-1 border border-line rounded-full bg-white/50" id="pv-tag">Project Tag</div>
-                <h1 class="text-4xl md:text-5xl lg:text-[4rem] leading-[1.05] tracking-tight font-medium text-ink mb-6" id="pv-title">Project Title</h1>
-                <p class="text-xl md:text-2xl font-serif text-stone italic max-w-2xl leading-relaxed" id="pv-short">Short descriptive subheadline goes here.</p>
+                <div class="label-text mb-6 inline-block px-3 py-1 border border-line rounded-full bg-white/50"
+                    id="pv-tag">Project Tag</div>
+                <h1 class="text-4xl md:text-5xl lg:text-[4rem] leading-[1.05] tracking-tight font-medium text-ink mb-6"
+                    id="pv-title">Project Title</h1>
+                <p class="text-xl md:text-2xl font-serif text-stone italic max-w-2xl leading-relaxed" id="pv-short">
+                    Short descriptive subheadline goes here.</p>
             </header>
 
             <!-- Visual Section -->
@@ -705,11 +903,20 @@
                     </div>
                 </div>
                 <!-- Navigation Controls -->
-                <button id="pv-prev" onclick="prevSlide()" class="absolute left-6 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur rounded-full flex items-center justify-center text-ink opacity-0 group-hover:opacity-100 transition-opacity border border-line shadow-sm hover:text-rust z-10 disabled:opacity-0 disabled:cursor-none" aria-label="Previous image">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                <button id="pv-prev" onclick="prevSlide()"
+                    class="absolute left-6 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur rounded-full flex items-center justify-center text-ink opacity-0 group-hover:opacity-100 transition-opacity border border-line shadow-sm hover:text-rust z-10 disabled:opacity-0 disabled:cursor-none"
+                    aria-label="Previous image">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                        </path>
+                    </svg>
                 </button>
-                <button id="pv-next" onclick="nextSlide()" class="absolute right-6 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur rounded-full flex items-center justify-center text-ink opacity-0 group-hover:opacity-100 transition-opacity border border-line shadow-sm hover:text-rust z-10 disabled:opacity-0 disabled:cursor-none" aria-label="Next image">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                <button id="pv-next" onclick="nextSlide()"
+                    class="absolute right-6 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur rounded-full flex items-center justify-center text-ink opacity-0 group-hover:opacity-100 transition-opacity border border-line shadow-sm hover:text-rust z-10 disabled:opacity-0 disabled:cursor-none"
+                    aria-label="Next image">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
                 </button>
                 <!-- Dots indicator -->
                 <div id="pv-dots" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
@@ -728,20 +935,28 @@
                         </p>
                     </section>
                     <section>
-                        <h2 class="text-xl font-medium text-ink mb-4 pb-2 border-b border-line">Approach & Execution</h2>
+                        <h2 class="text-xl font-medium text-ink mb-4 pb-2 border-b border-line">Approach & Execution
+                        </h2>
                         <p class="text-stone text-base md:text-lg leading-relaxed font-light" id="pv-approach">
                             Approach text goes here.
                         </p>
                     </section>
                 </div>
-                
+
                 <!-- Bento Sidebar -->
                 <aside class="flex flex-col gap-6">
                     <!-- Visit Hub / Project Link -->
                     <div id="pv-link-container" class="hidden">
-                        <a id="pv-link" href="#" target="_blank" class="bento-card p-5 bg-rust text-white flex items-center justify-between hover-3d group cursor-pointer border-none shadow-md">
+                        <a id="pv-link" href="#" target="_blank"
+                            class="bento-card p-5 bg-rust text-white flex items-center justify-between hover-3d group cursor-pointer border-none shadow-md">
                             <span class="font-medium">Visit Project</span>
-                            <svg class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            <svg class="w-5 h-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                </path>
+                            </svg>
                         </a>
                     </div>
 
@@ -753,7 +968,8 @@
                     </div>
                     <div class="bento-card p-6 md:p-8 bg-white/50">
                         <h3 class="label-text mb-4">Core Features</h3>
-                        <ul id="pv-features" class="flex flex-col gap-3 text-sm text-stone leading-relaxed font-light list-inside list-disc">
+                        <ul id="pv-features"
+                            class="flex flex-col gap-3 text-sm text-stone leading-relaxed font-light list-inside list-disc">
                             <!-- Injected dynamically -->
                         </ul>
                     </div>
@@ -927,7 +1143,7 @@
         // --- Global State ---
         let currentView = 'home-view';
         let isAnimating = false;
-        let activeProjectContext = 'home-view'; 
+        let activeProjectContext = 'home-view';
         let viewSliderIndex = 0;
         let viewSliderTotal = 0;
 
@@ -953,16 +1169,16 @@
                     const target = e.currentTarget;
                     target.classList.remove('border-line', 'text-stone', 'bg-white/50');
                     target.classList.add('active', 'border-rust', 'text-rust', 'bg-base');
-                    
+
                     const category = target.getAttribute('data-filter');
-                    
+
                     const grid = document.getElementById('work-grid');
                     if (grid.children.length > 0) {
                         gsap.to('#work-grid .bento-item', {
                             y: 20, opacity: 0, duration: 0.3, stagger: 0.05,
                             onComplete: () => {
                                 renderWorkGrid(category);
-                                gsap.fromTo('#work-grid .bento-item', 
+                                gsap.fromTo('#work-grid .bento-item',
                                     { y: 20, opacity: 0 },
                                     { y: 0, opacity: 1, duration: 0.4, stagger: 0.05, clearProps: "all" }
                                 );
@@ -971,7 +1187,7 @@
                         });
                     } else {
                         renderWorkGrid(category);
-                        gsap.fromTo('#work-grid .bento-item', 
+                        gsap.fromTo('#work-grid .bento-item',
                             { y: 20, opacity: 0 },
                             { y: 0, opacity: 1, duration: 0.4, stagger: 0.05, clearProps: "all" }
                         );
@@ -984,18 +1200,18 @@
         function renderWorkGrid(filterCategory) {
             const grid = document.getElementById('work-grid');
             grid.innerHTML = '';
-            
+
             Object.keys(projectData).forEach(key => {
                 const data = projectData[key];
                 if (filterCategory === 'all' || data.category === filterCategory) {
                     const article = document.createElement('article');
                     article.className = 'bento-card bento-item lg:col-span-2 group cursor-pointer hover-3d h-full min-h-[400px] mt-4 md:mt-0';
                     article.onclick = () => openProject(key);
-                    
+
                     const tagHtml = `<div class="absolute top-6 left-6 z-10 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center gap-2 border border-line transition-colors group-hover:border-rust/30 shadow-sm">
                         <span class="label-text !text-ink !tracking-normal">${data.title}</span>
                     </div>`;
-                    
+
                     const imgHtml = `<div class="img-wrapper pointer-events-none w-full h-full">
                         <img src="${data.images[0]}" alt="${data.title}">
                     </div>`;
@@ -1007,7 +1223,7 @@
         }
 
         function triggerViewStagger(viewId) {
-            gsap.fromTo(`${viewId} .bento-item`, 
+            gsap.fromTo(`${viewId} .bento-item`,
                 { y: 30, opacity: 0 },
                 { y: 0, opacity: 1, duration: 1, stagger: 0.1, ease: "power3.out", clearProps: "all" }
             );
@@ -1048,13 +1264,13 @@
                     if (!rect.width || !rect.height) return;
                     const x = (e.clientX - rect.left) / rect.width - 0.5;
                     const y = (e.clientY - rect.top) / rect.height - 0.5;
-                    
+
                     gsap.to(card, { rotateY: x * 6, rotateX: -y * 6, duration: 0.5, ease: "power2.out", transformPerspective: 1000 });
-                    if(img) gsap.to(img, { x: x * 20, y: y * 20, duration: 0.8, ease: "power2.out" });
+                    if (img) gsap.to(img, { x: x * 20, y: y * 20, duration: 0.8, ease: "power2.out" });
                 });
                 card.addEventListener('mouseleave', () => {
                     gsap.to(card, { rotateY: 0, rotateX: 0, duration: 1.2, ease: "power3.out" });
-                    if(img) gsap.to(img, { x: 0, y: 0, duration: 1.2, ease: "power3.out" });
+                    if (img) gsap.to(img, { x: 0, y: 0, duration: 1.2, ease: "power3.out" });
                 });
             });
         }
@@ -1064,30 +1280,30 @@
             const faceCard = document.getElementById('face-card');
             const headGroup = document.getElementById('head-group');
             const suit = document.getElementById('face-suit');
-            
+
             const pupilL = document.getElementById('pupil-left');
             const pupilR = document.getElementById('pupil-right');
             const eyeBgL = document.getElementById('eye-bg-l');
             const eyeBgR = document.getElementById('eye-bg-r');
-            
+
             if (!faceCard) return;
-            
+
             let idleTimer;
             let isIdle = false;
 
             // ANIMATION FUNCTIONS
             function playBlink() {
                 // Squashing the ellipse base makes the outline look like a closed thick eyelid line
-                gsap.to([eyeBgL, eyeBgR], {attr: {ry: 1}, duration: 0.1, yoyo: true, repeat: 1, ease: "power1.inOut"});
+                gsap.to([eyeBgL, eyeBgR], { attr: { ry: 1 }, duration: 0.1, yoyo: true, repeat: 1, ease: "power1.inOut" });
                 // Shrink pupil so it vanishes when eye closes
-                gsap.to([pupilL, pupilR], {scale: 0, transformOrigin: "center", duration: 0.1, yoyo: true, repeat: 1, ease: "power1.inOut"});
+                gsap.to([pupilL, pupilR], { scale: 0, transformOrigin: "center", duration: 0.1, yoyo: true, repeat: 1, ease: "power1.inOut" });
             }
 
             function playRoll() {
                 const tl = gsap.timeline();
                 tl.to([pupilL, pupilR], { x: 0, y: -4, duration: 0.2 })
-                  .to([pupilL, pupilR], { x: 3, y: -2, duration: 0.2 })
-                  .to([pupilL, pupilR], { x: 0, y: 0, duration: 0.2 });
+                    .to([pupilL, pupilR], { x: 3, y: -2, duration: 0.2 })
+                    .to([pupilL, pupilR], { x: 0, y: 0, duration: 0.2 });
             }
 
             function playLookAround() {
@@ -1102,10 +1318,10 @@
             function resetIdleTimer() {
                 isIdle = false;
                 clearTimeout(idleTimer);
-                
+
                 // Reset eye height (ry is 11 in our new SVG)
-                gsap.to([eyeBgL, eyeBgR], {attr: {ry: 11}, duration: 0.1});
-                gsap.to([pupilL, pupilR], {scale: 1, duration: 0.1});
+                gsap.to([eyeBgL, eyeBgR], { attr: { ry: 11 }, duration: 0.1 });
+                gsap.to([pupilL, pupilR], { scale: 1, duration: 0.1 });
 
                 idleTimer = setTimeout(() => {
                     isIdle = true;
@@ -1119,7 +1335,7 @@
 
             function autoAnimate() {
                 if (!isIdle) return;
-                
+
                 const rand = Math.random();
                 if (rand < 0.45) playBlink();
                 else if (rand < 0.75) playLookAround();
@@ -1132,38 +1348,38 @@
 
             function handleMove(e) {
                 resetIdleTimer();
-                if(isIdle) isIdle = false;
+                if (isIdle) isIdle = false;
 
                 let clientX = e.clientX;
                 let clientY = e.clientY;
 
-                if(e.touches && e.touches.length > 0) {
+                if (e.touches && e.touches.length > 0) {
                     clientX = e.touches[0].clientX;
                     clientY = e.touches[0].clientY;
                 }
-                
+
                 if (clientX === undefined) return;
 
                 const centerX = window.innerWidth / 2;
                 const centerY = window.innerHeight / 2;
-                
+
                 const deltaX = (clientX - centerX) / centerX;
                 const deltaY = (clientY - centerY) / centerY;
 
                 // 1. Pupils track mouse heavily
-                gsap.to([pupilL, pupilR], { 
-                    x: deltaX * 4, 
-                    y: deltaY * 5, 
-                    duration: 0.2, 
-                    ease: "power2.out" 
+                gsap.to([pupilL, pupilR], {
+                    x: deltaX * 4,
+                    y: deltaY * 5,
+                    duration: 0.2,
+                    ease: "power2.out"
                 });
 
                 // 2. Head pivots & moves
                 gsap.to(headGroup, {
                     x: deltaX * 10,
                     y: deltaY * 8,
-                    rotation: deltaX * 6, 
-                    transformOrigin: "100px 170px", 
+                    rotation: deltaX * 6,
+                    transformOrigin: "100px 170px",
                     duration: 0.5,
                     ease: "power2.out"
                 });
@@ -1190,9 +1406,9 @@
 
             window.addEventListener('mousemove', handleMove);
             window.addEventListener('touchmove', handleMove);
-            
+
             const scene = document.getElementById('face-scene');
-            if(scene) scene.addEventListener('click', playBlink);
+            if (scene) scene.addEventListener('click', playBlink);
 
             resetIdleTimer();
             setTimeout(playBlink, 800);
@@ -1205,7 +1421,7 @@
                 el.classList.add('text-stone');
             });
             const activeBtn = document.querySelector(`.pill-item[data-target="${targetId}"]`);
-            if(activeBtn) {
+            if (activeBtn) {
                 activeBtn.classList.remove('text-stone');
                 activeBtn.classList.add('text-rust', 'bg-base');
             }
@@ -1215,10 +1431,10 @@
         function updateSlider() {
             const track = document.getElementById('pv-slider-track');
             track.style.transform = `translateX(-${viewSliderIndex * 100}%)`;
-            
+
             document.getElementById('pv-prev').disabled = viewSliderIndex === 0;
             document.getElementById('pv-next').disabled = viewSliderIndex === viewSliderTotal - 1;
-            
+
             document.querySelectorAll('.pv-dot').forEach((dot, idx) => {
                 if (idx === viewSliderIndex) {
                     dot.className = 'pv-dot h-2 rounded-full transition-all duration-300 bg-rust w-6';
@@ -1227,28 +1443,28 @@
                 }
             });
         }
-        
-        window.prevSlide = function() {
-            if(viewSliderIndex > 0) {
+
+        window.prevSlide = function () {
+            if (viewSliderIndex > 0) {
                 viewSliderIndex--;
                 updateSlider();
             }
         };
-        
-        window.nextSlide = function() {
-            if(viewSliderIndex < viewSliderTotal - 1) {
+
+        window.nextSlide = function () {
+            if (viewSliderIndex < viewSliderTotal - 1) {
                 viewSliderIndex++;
                 updateSlider();
             }
         };
-        
-        window.goToSlide = function(idx) {
+
+        window.goToSlide = function (idx) {
             viewSliderIndex = idx;
             updateSlider();
         };
 
         // --- SPA Routing Logic ---
-        window.switchView = function(targetId) {
+        window.switchView = function (targetId) {
             if (isAnimating || currentView === targetId) return;
             isAnimating = true;
 
@@ -1266,16 +1482,16 @@
                 onComplete: () => {
                     currentEl.classList.remove('view-active');
                     gsap.set(currentEl, { clearProps: "all" }); // Crucial bugfix for blank pages
-                    
+
                     targetEl.classList.add('view-active');
                     window.scrollTo({ top: 0, behavior: 'instant' });
-                    
-                    gsap.fromTo(targetEl, 
+
+                    gsap.fromTo(targetEl,
                         { opacity: 0, y: 40 },
                         { opacity: 1, y: 0, duration: 0.6, ease: "power3.out", clearProps: "all" }
                     );
-                    
-                    if(targetId !== 'project-view') {
+
+                    if (targetId !== 'project-view') {
                         triggerViewStagger(`#${targetId}`);
                     }
                     currentView = targetId;
@@ -1285,7 +1501,7 @@
         };
 
         // --- Project View Logic ---
-        window.openProject = function(projectId) {
+        window.openProject = function (projectId) {
             if (isAnimating) return;
             isAnimating = true;
 
@@ -1297,7 +1513,7 @@
             document.getElementById('pv-short').textContent = data.short;
             document.getElementById('pv-overview').textContent = data.overview;
             document.getElementById('pv-approach').textContent = data.approach;
-            
+
             // Link Logic
             const linkBox = document.getElementById('pv-link-container');
             const linkEl = document.getElementById('pv-link');
@@ -1319,7 +1535,7 @@
             data.images.forEach((imgUrl, idx) => {
                 const imgWrap = document.createElement('div');
                 imgWrap.className = 'w-full h-full flex-shrink-0 relative';
-                imgWrap.innerHTML = `<img src="${imgUrl}" alt="Project slide ${idx+1}">`;
+                imgWrap.innerHTML = `<img src="${imgUrl}" alt="Project slide ${idx + 1}">`;
                 sliderTrack.appendChild(imgWrap);
 
                 const dot = document.createElement('button');
@@ -1347,7 +1563,7 @@
             document.getElementById('pv-stack').innerHTML = data.stack.map(item => `<li>${item}</li>`).join('');
             document.getElementById('pv-features').innerHTML = data.features.map(item => `<li>${item}</li>`).join('');
 
-            activeProjectContext = currentView; 
+            activeProjectContext = currentView;
             const sourceView = document.getElementById(currentView);
             const projectView = document.getElementById('project-view');
 
@@ -1358,14 +1574,14 @@
                 onComplete: () => {
                     sourceView.classList.remove('view-active');
                     gsap.set(sourceView, { clearProps: "all" });
-                    
+
                     // Crucial bugfix: wipes previous inline opacities from container
-                    gsap.set(projectView, { clearProps: "all" }); 
-                    
+                    gsap.set(projectView, { clearProps: "all" });
+
                     projectView.classList.add('view-active');
                     projectView.scrollTop = 0;
 
-                    gsap.fromTo(".proj-elem", 
+                    gsap.fromTo(".proj-elem",
                         { y: 40, opacity: 0 },
                         { y: 0, opacity: 1, duration: 0.8, stagger: 0.08, ease: "power3.out", clearProps: "all", onComplete: () => { isAnimating = false; } }
                     );
@@ -1373,7 +1589,7 @@
             });
         };
 
-        window.closeProject = function() {
+        window.closeProject = function () {
             if (isAnimating) return;
             isAnimating = true;
 
@@ -1392,16 +1608,19 @@
 
                     gsap.fromTo(sourceView,
                         { y: -40, opacity: 0, scale: 0.98 },
-                        { y: 0, opacity: 1, scale: 1, duration: 0.8, ease: "power3.out", clearProps: "all", onComplete: () => { 
-                            currentView = activeProjectContext;
-                            updatePillMenu(currentView);
-                            isAnimating = false; 
-                            triggerViewStagger(`#${activeProjectContext}`);
-                        } }
+                        {
+                            y: 0, opacity: 1, scale: 1, duration: 0.8, ease: "power3.out", clearProps: "all", onComplete: () => {
+                                currentView = activeProjectContext;
+                                updatePillMenu(currentView);
+                                isAnimating = false;
+                                triggerViewStagger(`#${activeProjectContext}`);
+                            }
+                        }
                     );
                 }
             });
         };
     </script>
 </body>
+
 </html>
