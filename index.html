@@ -216,9 +216,13 @@
     <div class="noise-overlay"></div>
 
     <!-- FLOATING BRAND LOGO -->
-    <div class="fixed top-8 left-4 sm:left-8 z-40 text-ink font-medium tracking-tight text-lg pointer-events-none">
-        Neshwan<span class="font-serif italic text-rust">.</span>
+    <!-- <div
+        class="fixed top-0 left-0 w-full h-28 md:h-36 bg-gradient-to-b from-base via-base/90 to-transparent z-30 pointer-events-none">
     </div>
+
+    <div class="fixed top-8 left-4 sm:left-8 z-40 text-ink font-medium tracking-tight text-lg pointer-events-none">
+        Nashwan Bin Niyaz<span class="font-serif italic text-rust">.</span>
+    </div> -->
 
     <!-- FLOATING PILL NAVIGATION -->
     <nav
@@ -263,7 +267,7 @@
             </svg>
         </button>
         <div class="w-px h-6 bg-line mx-1 md:mx-2"></div>
-        <a href="#" download="Neshwan_Resume.pdf"
+        <a href="cv/resume.pdf" download="Neshwan_Resume.pdf"
             class="magnetic p-2.5 md:p-3 rounded-full transition-all duration-300 text-stone hover:text-rust hover:bg-rust/10 flex items-center justify-center gap-2 group"
             aria-label="Resume">
             <span
@@ -277,7 +281,7 @@
     </nav>
 
     <!-- MAIN VIEWPORT container -->
-    <main class="flex-grow w-full relative z-10 pt-24 md:pt-32">
+    <main class="flex-grow w-full relative z-10 pt-24 md:pt-24">
 
         <!-- ==================== HOME VIEW ==================== -->
         <div id="home-view" class="view-section view-active w-full max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8">
@@ -322,7 +326,7 @@
                     id="face-scene" style="perspective: 1200px; cursor: pointer;">
                     <div
                         class="absolute top-6 left-6 label-text z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        Observer</div>
+                        Nashwan Bin Niyaz</div>
                     <svg viewBox="0 0 200 300" id="face-card"
                         style="filter: drop-shadow(6px 8px 0px rgba(0, 0, 0, 0.08)); transform-style: preserve-3d; width: 100%; height: 100%;">
 
@@ -829,15 +833,18 @@
                         </p>
                     </div>
                     <div class="mt-12 flex flex-col gap-4">
-                        <a href="mailto:hello@example.com"
-                            class="text-2xl md:text-3xl font-serif italic hover:text-rust transition-colors w-max magnetic">hello@neshwan.dev</a>
+                        <a href="mailto:nashwanbinniyaz@gmail.com"
+                            class="text-2xl md:text-3xl font-serif italic hover:text-rust transition-colors w-max magnetic">
+                            nashwanbinniyaz@gmail.com
+                        </a>
                         <div class="flex gap-6 mt-4 relative z-20">
-                            <a href="#"
+                            <a href="https://linkedin.com/in/nashwan-ca-249a94189" target="_blank"
+                                rel="noopener noreferrer"
                                 class="text-sm uppercase tracking-widest text-white/60 hover:text-white transition-colors">LinkedIn</a>
-                            <a href="#"
+                            <a href="https://github.com/lone-x" target="_blank" rel="noopener noreferrer"
                                 class="text-sm uppercase tracking-widest text-white/60 hover:text-white transition-colors">GitHub</a>
-                            <a href="#"
-                                class="text-sm uppercase tracking-widest text-white/60 hover:text-white transition-colors">Twitter</a>
+                            <a href="https://nashwan-bin-niyaz.vercel.app" target="_blank" rel="noopener noreferrer"
+                                class="text-sm uppercase tracking-widest text-white/60 hover:text-white transition-colors">Portfolio</a>
                         </div>
                     </div>
                 </article>
@@ -845,14 +852,19 @@
                 <!-- Contact Form -->
                 <article class="bento-card bento-item p-8 md:p-12 lg:p-16 min-h-[500px] hover-3d">
                     <div class="label-text mb-12">Direct Message</div>
-                    <form class="flex flex-col gap-8 h-full relative z-20"
-                        onsubmit="event.preventDefault(); alert('Form submitted!');">
+
+                    <!-- Replace YOUR_FORM_ID with the ID you get from Formspree -->
+                    <form action="https://formspree.io/f/mreoqlen" method="POST"
+                        class="flex flex-col gap-8 h-full relative z-20">
                         <div class="flex flex-col md:flex-row gap-8">
-                            <input type="text" placeholder="What's your name?" required>
-                            <input type="email" placeholder="Your email address?" required>
+                            <!-- Added name="name" -->
+                            <input type="text" name="name" placeholder="What's your name?" required>
+                            <!-- Added name="email" -->
+                            <input type="email" name="email" placeholder="Your email address?" required>
                         </div>
                         <div class="flex-grow">
-                            <textarea placeholder="Tell me about your project or idea..."
+                            <!-- Added name="message" -->
+                            <textarea name="message" placeholder="Tell me about your project or idea..."
                                 class="h-full min-h-[150px] resize-none" required></textarea>
                         </div>
                         <div class="mt-auto flex justify-end">
