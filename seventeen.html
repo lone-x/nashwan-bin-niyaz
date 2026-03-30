@@ -245,9 +245,9 @@
                 </article>
 
                 <!-- 2. CARTOON FACE -->
-                <article class="bento-card bento-item md:col-span-1 lg:col-span-1 md:row-span-2 lg:row-span-2 p-0 flex flex-col items-center justify-center hover-3d relative overflow-hidden bg-white group" id="face-card">
+                <article class="bento-card bento-item md:col-span-1 lg:col-span-1 md:row-span-2 lg:row-span-2 p-0 flex flex-col items-center justify-center relative overflow-hidden bg-white group" id="face-scene" style="perspective: 1200px; cursor: pointer;">
                     <div class="absolute top-6 left-6 label-text z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Observer</div>
-<svg viewBox="0 0 200 300" id="face-card">
+<svg viewBox="0 0 200 300" id="face-card" style="filter: drop-shadow(6px 8px 0px rgba(0, 0, 0, 0.08)); transform-style: preserve-3d; width: 100%; height: 100%;">
             
             <!-- BODY LAYER (Slouched Developer Hoodie) -->
             <g id="face-suit">
@@ -1062,34 +1062,25 @@
         // --- Cartoon Face Interaction ---
         function initFaceInteraction() {
             const faceCard = document.getElementById('face-card');
-            if (!faceCard) return;
-            
             const headGroup = document.getElementById('head-group');
             const suit = document.getElementById('face-suit');
-
+            
             const pupilL = document.getElementById('pupil-left');
             const pupilR = document.getElementById('pupil-right');
             const eyeBgL = document.getElementById('eye-bg-l');
             const eyeBgR = document.getElementById('eye-bg-r');
             
+            if (!faceCard) return;
+            
             let idleTimer;
             let isIdle = false;
 
+            // ANIMATION FUNCTIONS
             function playBlink() {
-                gsap.to([eyeBgL, eyeBgR], {
-                    attr: { ry: 1 },
-                    duration: 0.1,
-                    yoyo: true,
-                    repeat: 1
-                });
-
-                gsap.to([pupilL, pupilR], {
-                    scale: 0,
-                    transformOrigin: "center",
-                    duration: 0.1,
-                    yoyo: true,
-                    repeat: 1
-                });
+                // Squashing the ellipse base makes the outline look like a closed thick eyelid line
+                gsap.to([eyeBgL, eyeBgR], {attr: {ry: 1}, duration: 0.1, yoyo: true, repeat: 1, ease: "power1.inOut"});
+                // Shrink pupil so it vanishes when eye closes
+                gsap.to([pupilL, pupilR], {scale: 0, transformOrigin: "center", duration: 0.1, yoyo: true, repeat: 1, ease: "power1.inOut"});
             }
 
             function playRoll() {
@@ -1101,9 +1092,9 @@
 
             function playLookAround() {
                 gsap.to([pupilL, pupilR], {
-                    x: () => (Math.random() - 0.5) * 6,
+                    x: () => (Math.random() - 0.5) * 6, // Keep constrained inside glasses
                     y: () => (Math.random() - 0.5) * 6,
-                    duration: 0.3,
+                    duration: 0.35,
                     ease: "power2.out"
                 });
             }
@@ -1112,77 +1103,99 @@
                 isIdle = false;
                 clearTimeout(idleTimer);
                 
-                // Ensure eyes are open
-                gsap.to([eyeBgL, eyeBgR], {attr: {ry: 9}, duration: 0.1});
-                gsap.to([pupilL, pupilR], {attr: {r: 3}, duration: 0.1});
+                // Reset eye height (ry is 11 in our new SVG)
+                gsap.to([eyeBgL, eyeBgR], {attr: {ry: 11}, duration: 0.1});
+                gsap.to([pupilL, pupilR], {scale: 1, duration: 0.1});
 
                 idleTimer = setTimeout(() => {
                     isIdle = true;
                     autoAnimate();
-                }, 3000); // 3 seconds to idle
+                    // Gentle float back to center
+                    gsap.to([faceCard, headGroup, suit, pupilL, pupilR], {
+                        x: 0, y: 0, rotation: 0, rotationX: 0, rotationY: 0, duration: 1.5, ease: "power2.out"
+                    });
+                }, 3000);
             }
 
             function autoAnimate() {
                 if (!isIdle) return;
                 
                 const rand = Math.random();
-                if (rand < 0.4) playBlink();
-                else if (rand < 0.7) playLookAround();
+                if (rand < 0.45) playBlink();
+                else if (rand < 0.75) playLookAround();
                 else playRoll();
 
                 if (isIdle) {
-                    idleTimer = setTimeout(autoAnimate, 1000 + Math.random() * 2000);
+                    idleTimer = setTimeout(autoAnimate, 1500 + Math.random() * 2500);
                 }
             }
 
             function handleMove(e) {
-                const point = e.touches && e.touches[0] ? e.touches[0] : e;
-                if (!point || typeof point.clientX !== 'number' || typeof point.clientY !== 'number') return;
-
-                if (!faceCard.offsetParent) return;
-
-                const rect = faceCard.getBoundingClientRect();
-                if (!rect.width || !rect.height) return;
-
                 resetIdleTimer();
-                const centerX = rect.left + rect.width / 2;
-                const centerY = rect.top + rect.height / 2;
+                if(isIdle) isIdle = false;
 
-                const dx = (point.clientX - centerX) / rect.width;
-                const dy = (point.clientY - centerY) / rect.height;
+                let clientX = e.clientX;
+                let clientY = e.clientY;
 
-                if (!Number.isFinite(dx) || !Number.isFinite(dy)) return;
+                if(e.touches && e.touches.length > 0) {
+                    clientX = e.touches[0].clientX;
+                    clientY = e.touches[0].clientY;
+                }
+                
+                if (clientX === undefined) return;
 
-                // Eyes
-                gsap.to([pupilL, pupilR], {
-                    x: dx * 6,
-                    y: dy * 6,
-                    duration: 0.2
+                const centerX = window.innerWidth / 2;
+                const centerY = window.innerHeight / 2;
+                
+                const deltaX = (clientX - centerX) / centerX;
+                const deltaY = (clientY - centerY) / centerY;
+
+                // 1. Pupils track mouse heavily
+                gsap.to([pupilL, pupilR], { 
+                    x: deltaX * 4, 
+                    y: deltaY * 5, 
+                    duration: 0.2, 
+                    ease: "power2.out" 
                 });
 
-                // Head tilt
+                // 2. Head pivots & moves
                 gsap.to(headGroup, {
-                    x: dx * 8,
-                    y: dy * 6,
-                    rotation: dx * 6,
-                    transformOrigin: "100px 170px",
-                    duration: 0.5
+                    x: deltaX * 10,
+                    y: deltaY * 8,
+                    rotation: deltaX * 6, 
+                    transformOrigin: "100px 170px", 
+                    duration: 0.5,
+                    ease: "power2.out"
                 });
 
-                // Body slight follow
+                // 3. Hoodie body moves slightly
                 gsap.to(suit, {
-                    x: dx * 3,
-                    y: dy * 2,
-                    rotation: dx * 2,
+                    x: deltaX * 3,
+                    y: deltaY * 2,
+                    rotation: deltaX * 2,
                     transformOrigin: "100px 300px",
-                    duration: 0.7
+                    duration: 0.7,
+                    ease: "power2.out"
+                });
+
+                // 4. Global 3D perspective pop
+                gsap.to(faceCard, {
+                    rotationY: deltaX * 18,
+                    rotationX: -deltaY * 18,
+                    transformOrigin: "center center",
+                    duration: 0.6,
+                    ease: "power2.out"
                 });
             }
 
             window.addEventListener('mousemove', handleMove);
             window.addEventListener('touchmove', handleMove);
+            
+            const scene = document.getElementById('face-scene');
+            if(scene) scene.addEventListener('click', playBlink);
+
             resetIdleTimer();
-            setTimeout(playBlink, 1000);
+            setTimeout(playBlink, 800);
         }
 
         // Pill Menu Active State Logic
